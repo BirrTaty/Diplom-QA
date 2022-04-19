@@ -3,7 +3,7 @@ HELP.md
 .allure/
 build/
 data/
-gate-simulator/
+
 
 ### STS ###
 .apt_generated
