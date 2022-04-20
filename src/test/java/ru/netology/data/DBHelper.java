@@ -1,5 +1,6 @@
 package ru.netology.data;
 
+import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +12,7 @@ public class DBHelper {
     private static String dbUser = System.getProperty("dbUser");
     private static String dbPass = System.getProperty("dbPass");
 
-
+    @SneakyThrows
     public static void clearDB() {
         var cleanCreditRequest = "DELETE FROM credit_request_entity;";
         var cleanOrder = "DELETE FROM order_entity;";
@@ -26,7 +27,8 @@ public class DBHelper {
         }
     }
 
-    public static String getTransactionStatusDebitCard() throws InterruptedException {
+    @SneakyThrows
+    public static String getTransactionStatusDebitCard()  {
         var sqlQuery = "SELECT status FROM payment_entity WHERE id IS NOT NULL;";
         Thread.sleep(500);
         try (var conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
@@ -42,7 +44,8 @@ public class DBHelper {
         return null;
     }
 
-    public static String getTransactionTypeDebitCard() throws InterruptedException {
+    @SneakyThrows
+    public static String getTransactionTypeDebitCard() {
         var sqlQuery = "SELECT payment_id FROM order_entity WHERE id IS NOT NULL;";
         Thread.sleep(500);
         try (var conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
@@ -58,7 +61,8 @@ public class DBHelper {
         return null;
     }
 
-    public static String getTransactionStatusCreditCard() throws InterruptedException {
+    @SneakyThrows
+    public static String getTransactionStatusCreditCard() {
         var sqlQuery = "SELECT status FROM credit_request_entity WHERE id IS NOT NULL;";
         Thread.sleep(500);
         try (var conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
@@ -74,7 +78,8 @@ public class DBHelper {
         return null;
     }
 
-    public static String getTransactionTypeCreditCard() throws InterruptedException {
+    @SneakyThrows
+    public static String getTransactionTypeCreditCard() {
         var sqlQuery = "SELECT credit_id FROM order_entity WHERE id IS NOT NULL;";
         Thread.sleep(500);
         try (var conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);

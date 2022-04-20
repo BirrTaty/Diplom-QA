@@ -2,7 +2,6 @@ package ru.netology.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.*;
 import org.testng.annotations.BeforeTest;
 import ru.netology.data.DataHelper;
@@ -39,7 +38,7 @@ public class PaymentCreditCardTest {
 
 //     Positive Tests
 
-    @SneakyThrows
+
     @Test
     void shouldCreditApprovedCard() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -53,7 +52,7 @@ public class PaymentCreditCardTest {
         assertNotNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
+
     @Test
     void shouldCreditDeclinedCard() {
         var cardNumber = DataHelper.getDeclinedCardNumber();
@@ -69,7 +68,7 @@ public class PaymentCreditCardTest {
 
     // Negative Tests
 
-    @SneakyThrows
+
     @Test
     void shouldCreditAnotherCard() {
         var cardNumber = DataHelper.getAnotherCardNumber();
@@ -84,7 +83,7 @@ public class PaymentCreditCardTest {
         creditPaymentPage.closeErrorSendFormMessage();
     }
 
-    @SneakyThrows
+
     @Test
     void shouldCreditInvalidLengthFormatCardNumber() {
         var cardNumber = DataHelper.getInvalidFieldFormat(14, 0, 0, 0, 0);
@@ -98,7 +97,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidCardNumberWhenAllDigitZero() {
         var cardNumber = DataHelper.getInvalidFieldFormat(0, 0, 16, 0, 0);
@@ -112,7 +110,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditBuyWithInvalidCardNumberIncludeSymbolsAndLetters() {
         var cardNumber = DataHelper.getInvalidFieldFormat(0, 5, 0, 6, 5);
@@ -126,7 +123,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditBuyWithEmptyCardNumberField() {
         var cardNumber = DataHelper.getInvalidFieldFormat(0, 0, 0, 0, 0);
@@ -140,7 +136,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditOutOfMonth() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -154,7 +149,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditNonexistentMonth() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -168,7 +162,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditEmptyMonthField() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -182,7 +175,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidMonthWhenAllDigitZero() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -196,7 +188,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidLengthFormatMonth() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -210,7 +201,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidMonthIncludeLetters() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -224,8 +214,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-
-    @SneakyThrows
     @Test
     void shouldCreditOutOfYear() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -239,7 +227,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditBuyWithValidityPeriodExpiresInFiveYears() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -253,7 +240,6 @@ public class PaymentCreditCardTest {
         assertNotNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditValidityPeriodExpiresInSixYears() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -267,7 +253,6 @@ public class PaymentCreditCardTest {
         assertNotNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditEmptyYearField() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -281,7 +266,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidLengthFormatYear() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -295,7 +279,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidYearIncludeLetters() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -309,7 +292,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidYearWhenAllDigitZero() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -323,7 +305,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidYearIncludeSymbols() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -337,7 +318,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditOwnerIncludeCyrillicLetters() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -351,7 +331,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditOwnerFieldLengthConsistingOfOneLetter() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -365,7 +344,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditOwnerFieldLengthOverLimit() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -379,7 +357,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditEmptyOwnerField() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -393,7 +370,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidOwnerIncludeDigitsAndSymbols() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -407,7 +383,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditEmptyCodeField() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -422,7 +397,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidCodeWhenAllDigitZero() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -437,7 +411,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidLengthFormatCode() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -452,7 +425,6 @@ public class PaymentCreditCardTest {
         assertNull(DBHelper.getTransactionTypeCreditCard());
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditWithInvalidCodeIncludeLetters() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -467,7 +439,6 @@ public class PaymentCreditCardTest {
         creditPaymentPage.errorMessageOwnerFieldEmptyWhenTestedCodeField();
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidCodeIncludeSymbols() {
         var cardNumber = DataHelper.getApprovedCardNumber();
@@ -482,7 +453,6 @@ public class PaymentCreditCardTest {
         creditPaymentPage.errorMessageOwnerFieldEmptyWhenTestedCodeField();
     }
 
-    @SneakyThrows
     @Test
     void shouldCreditInvalidMonthIncludeSymbols() {
         var cardNumber = DataHelper.getApprovedCardNumber();
