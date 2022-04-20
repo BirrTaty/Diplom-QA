@@ -2,7 +2,9 @@
 
 ## Документация проекта
 
-* [План автоматизации тестирования](https://github.com/BirrTaty/Diplom-QA/blob/master/Plan.md)
+* [План автоматизации тестирования](https://github.com/BirrTaty/Diplom-QA/blob/master/docs/Plan.md)
+* [Отчет о тестировании](https://github.com/BirrTaty/Diplom-QA/blob/master/docs/Report.md)
+* [Отчёт о проведённой автоматизации тестирования]()
 
 ## Инструкция по запуску тестов
 #### Необходимо установит и настроить: 
@@ -19,3 +21,6 @@
 4. Запустить тесты:
  + Для БД MySQL: в новом окне терминала ввести команду `./gradlew test -DdbUrl=jdbc:mysql://localhost:3306/app-db`
  + Для БД PostgreSQL: в новом окне терминала ввести команду `./gradlew test -DdbUrl=jdbc:postgresql://localhost:5432/app-db`
+
+#### Формирование отчетов тестирования
+В новом окне терминала запустить формирование отчета командой ./gradlew allureServe
