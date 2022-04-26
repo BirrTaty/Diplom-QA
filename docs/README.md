@@ -4,7 +4,7 @@
 
 * [План автоматизации тестирования](https://github.com/BirrTaty/Diplom-QA/blob/master/docs/Plan.md)
 * [Отчет о тестировании](https://github.com/BirrTaty/Diplom-QA/blob/master/docs/Report.md)
-* [Отчёт о проведённой автоматизации тестирования]()
+* [Отчёт о проведённой автоматизации тестирования](https://github.com/BirrTaty/Diplom-QA/blob/master/docs/Summary.md)
 
 ## Инструкция по запуску тестов
 #### Необходимо установит и настроить: 
