@@ -6,8 +6,14 @@
 
 Скриншот:
 
-![](https://github.com/BirrTaty/Diplom-QA/blob/master/Report.PNG)
+![](https://github.com/BirrTaty/Diplom-QA/blob/master/pics/Report.PNG)
 
 #### В результате тестирования выявлены [дефекты](https://github.com/BirrTaty/Diplom-QA/issues) в связи с которыми даны следующие рекомендации:
 
-1. 
+1. Исправить орфографическую [ошибку](https://github.com/BirrTaty/Diplom-QA/issues/1) в нзвании города, а так же [изменить название](https://github.com/BirrTaty/Diplom-QA/issues/9) заголовка страницы в браузере;
+2. Установить [корректное сообщение](https://github.com/BirrTaty/Diplom-QA/issues/7) для пустых полей формы оплаты;
+3. Устранить ошибочное увдомление об [успешной оплате](https://github.com/BirrTaty/Diplom-QA/issues/6) под всплывающим уведомлением об отказе банка в проведении операции;
+4. Увеличить допустимый вводимый [срок действия банковской карты](https://github.com/BirrTaty/Diplom-QA/issues/8);
+5. Установить определение типа данных на которые рассчитано поле "Владелец"([1](https://github.com/BirrTaty/Diplom-QA/issues/3), [2](https://github.com/BirrTaty/Diplom-QA/issues/4));
+6. Устранить возможность отправки формы при вводе [нулевых значений](https://github.com/BirrTaty/Diplom-QA/issues/7) в поля "Номер карты", "Месяц", "CVC/CVV";
+7. Устранить неверное информационное сообщение при попытке совершить оплату по карте со статусом ["DECLINED"](https://github.com/BirrTaty/Diplom-QA/issues/5);
